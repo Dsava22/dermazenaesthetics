@@ -64,6 +64,34 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       text-align: center;
     }
+    
+#photographs {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.photo-reel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.photo-reel img {
+  flex: 0 0 auto;
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.photo-reel img:hover {
+  transform: scale(1.05);
+}
+    
     footer {
       background: #f6e9e9;
       text-align: center;
@@ -108,30 +136,21 @@
     </div>
   </section>
 
-    <section id="photographs">
+  <section id="photographs">
   <h2>Our Results</h2>
   <p>Browse through our gallery of transformations and treatments.</p>
-  <div class="gallery">
-    <div class="photo">
-      <img src="assets/FB_IMG_1.jpg" alt="Treatment Before" />
-    </div>
-    <div class="photo">
-      <img src="assets/FB_IMG_2.jpg" alt="Treatment After" />
-    </div>
-    <div class="photo">
-      <img src="assets/FB_IMG_3.jpg" alt="Skincare Results" />
-    </div>
-    <div class="photo">
-      <img src="assets/FB_IMG_4.jpg" alt="Treatment After" />
-      </div>
-    <div class="photo">
-      <img src="assets/FB_IMG_5.jpg" alt="Treatment After" />
-      </div>
-    <div class="photo">
-      <img src="assets/FB_IMG_6.jpg" alt="Treatment After" />
-      </div>
-    <div class="photo">
-      <img src="assets/FB_IMG_7.jpg" alt="Treatment After" />
+  <div class="photo-reel">
+    <img src="assets/FB_IMG_1.jpg" alt="Treatment Before" />
+    <img src="assets/FB_IMG_2.jpg" alt="Treatment After" />
+    <img src="assets/FB_IMG_3.jpg" alt="Skincare Results" />
+    <img src="assets/FB_IMG_4.jpg" alt="Skincare Results" />
+    <img src="assets/FB_IMG_5.jpg" alt="Skincare Results" />
+    <img src="assets/FB_IMG_6.jpg" alt="Skincare Results" />
+    <img src="assets/FB_IMG_7.jpg" alt="Skincare Results" />
+    <!-- Add more images as needed -->
+  </div>
+</section>
+
       <!-- Add more photos as needed -->
   </div>
 </section>
