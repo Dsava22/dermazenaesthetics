@@ -193,27 +193,26 @@
   <!-- Add this script at the bottom before closing body tag -->
   <script>
     let index = 0;
-    const track = document.querySelector('.photo-track');
-    const slides = document.querySelectorAll('.photo-track img');
-    const slidesPerView = 3;
+const track = document.querySelector('.photo-track');
+const slides = document.querySelectorAll('.photo-track img');
+const slidesPerView = 1;  // Display only one image at a time
 
-    function updateSlider() {
-      const slideWidth = slides[0].clientWidth;
-      const totalShift = index * slideWidth;
-      track.style.transform = `translateX(-${totalShift}px)`;
-    }
+function updateSlider() {
+  const totalShift = index * (100 / slidesPerView);
+  track.style.transform = `translateX(-${totalShift}%)`;
+}
 
-    function moveSlide(step) {
-      const maxIndex = Math.ceil(slides.length / slidesPerView) - 1;
-      index += step;
+function moveSlide(step) {
+  const maxIndex = Math.ceil(slides.length / slidesPerView) - 1;
+  index += step;
 
-      if (index < 0) index = maxIndex;
-      if (index > maxIndex) index = 0;
+  if (index < 0) index = maxIndex;
+  if (index > maxIndex) index = 0;
 
-      updateSlider();
-    }
+  updateSlider();
+}
 
-    updateSlider();  // Initialize slider when page loads
+updateSlider(); // Initialize on page load
   </script>
 </body>
 </html>
