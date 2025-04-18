@@ -79,7 +79,7 @@
     }
 
     .photo-track img {
-      width: 33.33%;  /* 3 images at a time */
+      width: 100%;  /* 1 images at a time */
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -103,13 +103,13 @@
 
     @media (max-width: 768px) {
       .photo-track img {
-        width: 50%; /* Show 2 images at a time on tablets */
+        flex: 0 0 100%; /* Show 1 images at a time on tablets */
       }
     }
 
     @media (max-width: 480px) {
       .photo-track img {
-        width: 100%; /* Show 1 image at a time on mobile */
+        flex: 0 0 100%; /* Show 1 image at a time on mobile */
       }
     }
 
