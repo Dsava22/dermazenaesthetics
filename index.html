@@ -64,31 +64,45 @@
       text-align: center;
     }
     
-#photographs {
-  padding: 40px 20px;
-  text-align: center;
+.photo-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 90%;
+  margin: 20px auto;
 }
 
-.photo-reel {
+.photo-track {
   display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px 0;
-  scroll-snap-type: x mandatory;
+  transition: transform 0.4s ease;
 }
 
-.photo-reel img {
-  flex: 0 0 auto;
-  width: 300px;
+.photo-track img {
+  min-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
 }
 
-.photo-reel img:hover {
-  transform: scale(1.05);
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(209, 182, 172, 0.8);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.slider-btn.left {
+  left: 10px;
+}
+
+.slider-btn.right {
+  right: 10px;
 }
     
     footer {
@@ -143,19 +157,18 @@
   <section id="photographs">
   <h2>Our Results</h2>
   <p>Browse through our gallery of transformations and treatments.</p>
-  <div class="photo-reel">
-    <img src="assets/FB_IMG_1.jpg" alt="Treatment Before" />
-    <img src="assets/FB_IMG_2.jpg" alt="Treatment After" />
-    <img src="assets/FB_IMG_3.jpg" alt="Skincare Results" />
-    <img src="assets/FB_IMG_4.jpg" alt="Skincare Results" />
-    <img src="assets/FB_IMG_5.jpg" alt="Skincare Results" />
-    <img src="assets/FB_IMG_6.jpg" alt="Skincare Results" />
-    <img src="assets/FB_IMG_7.jpg" alt="Skincare Results" />
-    <!-- Add more images as needed -->
-  </div>
-</section>
-
-      <!-- Add more photos as needed -->
+  <div class="photo-slider">
+    <button class="slider-btn left">&#10094;</button>
+    <div class="photo-track">
+      <img src="assets/FB_IMG_1.jpg" alt="Treatment Before" />
+      <img src="assets/FB_IMG_2.jpg" alt="Treatment After" />
+      <img src="assets/FB_IMG_3.jpg" alt="Skincare Results" />
+      <img src="assets/FB_IMG_4.jpg" alt="Skincare Results" />
+      <img src="assets/FB_IMG_5.jpg" alt="Skincare Results" />
+      <img src="assets/FB_IMG_6.jpg" alt="Skincare Results" />
+      <img src="assets/FB_IMG_7.jpg" alt="Skincare Results" />
+    </div>
+    <button class="slider-btn right">&#10095;</button>
   </div>
 </section>
 
@@ -168,5 +181,37 @@
   <footer>
     &copy; 2025 DermaZen. All rights reserved.
   </footer>
+
+  <script>
+  const track = document.querySelector('.photo-track');
+  const slides = document.querySelectorAll('.photo-track img');
+  const prev = document.querySelector('.slider-btn.left');
+  const next = document.querySelector('.slider-btn.right');
+  let index = 0;
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prev.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  });
+
+  next.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  });
+
+  // Optional: swipe support for touch devices
+  let startX = 0;
+  track.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
+  track.addEventListener('touchend', (e) => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) next.click();
+    if (endX - startX > 50) prev.click();
+  });
+</script>  
+    
 </body>
 </html>
