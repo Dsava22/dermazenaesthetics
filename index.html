@@ -6,136 +6,136 @@
   <title>DermaZen | Aesthetics & Skincare</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+
   <style>
-  body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #fff8f8;
-    color: #333;
-  }
-  header {
-    background: #f6e9e9;
-    padding: 60px 20px;
-    text-align: center;
-  }
-  .logo {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-  }
-  header p {
-    font-size: 18px;
-    color: #7b6d6d;
-  }
-  .cta-button {
-    margin-top: 20px;
-    background-color: #d1b6ac;
-    border: none;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color: #5c4a4a;
-  }
-  .treatments {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .treatment {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-
-  /* Photo slider styles */
-  .photo-slider {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .photo-track {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-
-  .photo-track img {
-    flex: 0 0 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-  button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(209,182,172,0.8);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-  }
-
-  button.prev { left: 10px; }
-  button.next { right: 10px; }
-
-  @media (max-width: 768px) {
-    .photo-slider {
-      max-width: 100%;
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff8f8;
+      color: #333;
     }
-    .photo-track img {
-      flex: 0 0 100%;
-    }
-  }
 
-  @media (max-width: 480px) {
-    .photo-slider {
-      max-width: 100%;
+    header {
+      background: #f6e9e9;
+      padding: 60px 20px;
+      text-align: center;
     }
-    .photo-track img {
-      flex: 0 0 100%;
-    }
-  }
 
-  @media (max-width: 600px) {
     .logo {
-      max-width: 150px;
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
     }
-  }
 
-  footer {
-    background: #f6e9e9;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #7b6d6d;
-  }
-</style>
+    header p {
+      font-size: 18px;
+      color: #7b6d6d;
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      background-color: #d1b6ac;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #5c4a4a;
+    }
+
+    .treatments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .treatment {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    /* --- Photo slider styles --- */
+    .photo-slider {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .photo-track {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-track img {
+      width: 100%;
+      flex-shrink: 0;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    button.prev, button.next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(209,182,172,0.8);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    button.prev { left: 10px; }
+    button.next { right: 10px; }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .photo-slider {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        max-width: 150px;
+      }
+    }
+
+    footer {
+      background: #f6e9e9;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #7b6d6d;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <img src="assets/Logo.jpg" alt="Dermazen Aesthetics Logo" class="logo">
@@ -160,3 +160,61 @@
         <p>Enhance and define natural features with expertly placed fillers.</p>
       </div>
       <div class="treatment">
+        <h3>Polynucleotides</h3>
+        <p>Stimulate skin regeneration and rejuvenation at a cellular level.</p>
+      </div>
+      <div class="treatment">
+        <h3>Skincare</h3>
+        <p>Tailored skincare routines and treatments for long-term skin health.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="photographs">
+    <h2>Our Results</h2>
+    <p>Browse through our gallery of transformations and treatments.</p>
+    <div class="photo-slider">
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <div class="photo-track">
+        <img src="assets/FB_IMG_1.jpg" alt="Treatment Before">
+        <img src="assets/FB_IMG_2.jpg" alt="Treatment After">
+        <img src="assets/FB_IMG_3.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_4.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_5.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_6.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_7.jpg" alt="Skincare Results">
+      </div>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Email us at <a href="mailto:dermazenaesthetics@outlook.com">dermazenaesthetics@outlook.com</a> or follow us on Instagram @dermazenaesthetics</p>
+    <a href="mailto:dermazenaesthetics@outlook.com" class="cta-button">Email Us</a>
+  </section>
+
+  <footer>
+    &copy; 2025 DermaZen. All rights reserved.
+  </footer>
+
+  <script>
+    let index = 0;
+    const track = document.querySelector('.photo-track');
+    const slides = document.querySelectorAll('.photo-track img');
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function moveSlide(step) {
+      index += step;
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      updateSlider();
+    }
+
+    updateSlider();  // Initialize on page load
+  </script>
+</body>
+</html>
