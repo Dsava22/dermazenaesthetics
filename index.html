@@ -7,126 +7,134 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #fff8f8;
-      color: #333;
-    }
-    header {
-      background: #f6e9e9;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .logo {
-      width: 100%;
-      max-width: 200px;  /* Sets the maximum size for desktop */
-      height: auto;
-      display: block;
-      margin: 0 auto 10px auto;
-    }
-    header p {
-      font-size: 18px;
-      color: #7b6d6d;
-    }
-    .cta-button {
-      margin-top: 20px;
-      background-color: #d1b6ac;
-      border: none;
-      color: white;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: #5c4a4a;
-    }
-    .treatments {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .treatment {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      text-align: center;
-    }
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff8f8;
+    color: #333;
+  }
+  header {
+    background: #f6e9e9;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .logo {
+    width: 100%;
+    max-width: 200px;  /* Sets the maximum size for desktop */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+  header p {
+    font-size: 18px;
+    color: #7b6d6d;
+  }
+  .cta-button {
+    margin-top: 20px;
+    background-color: #d1b6ac;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #5c4a4a;
+  }
+  .treatments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .treatment {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+  }
 
-    /* Photo slider styles */
+  /* Photo slider styles */
+  .photo-slider {
+    position: relative;
+    width: 100%;
+    max-width: 900px;  /* Ensure the container stays 900px wide */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .photo-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .photo-track img {
+    flex: 0 0 100%;  /* Show 1 image at a time */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(209,182,172,0.8);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  button.prev { left: 10px; }
+  button.next { right: 10px; }
+
+  @media (max-width: 768px) {
     .photo-slider {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-
-    .photo-track {
-      display: flex;
-      transition: transform 0.5s ease;
+      max-width: 100%; /* Adjusts for mobile screens */
     }
 
     .photo-track img {
-      width: 100%;  /* 1 images at a time */
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      flex: 0 0 100%; /* Ensure the slider still shows one image on tablets */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .photo-slider {
+      max-width: 100%; /* Adjusts for mobile screens */
     }
 
-    button.prev, button.next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(209,182,172,0.8);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 10;
+    .photo-track img {
+      flex: 0 0 100%; /* Ensure the slider still shows one image on mobile */
     }
+  }
 
-    button.prev { left: 10px; }
-    button.next { right: 10px; }
-
-    @media (max-width: 768px) {
-      .photo-track img {
-        flex: 0 0 100%; /* Show 1 images at a time on tablets */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .photo-track img {
-        flex: 0 0 100%; /* Show 1 image at a time on mobile */
-      }
-    }
-
-    @media (max-width: 600px) {
-      .logo {
+  @media (max-width: 600px) {
+    .logo {
       max-width: 150px; /* Scales down the logo for smaller screens */
-      }
     }
-    
-    footer {
-      background: #f6e9e9;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #7b6d6d;
-    }
-  </style>
+  }
+
+  footer {
+    background: #f6e9e9;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #7b6d6d;
+  }
+</style>
 </head>
 <body>
   <header>
