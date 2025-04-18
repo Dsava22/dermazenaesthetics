@@ -89,13 +89,14 @@
     }
 
     .photo-track img {
-      width: 100%;
-      flex-shrink: 0;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+  width: 100%;
+  flex-shrink: 0;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background: #fff; /* Optional: prevents gaps looking strange if aspect ratio differs */
+}
 
     button.prev, button.next {
       position: absolute;
