@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DermaZen | Aesthetics & Skincare</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     body {
       margin: 0;
@@ -14,39 +16,64 @@
       color: #333;
     }
 
-    /* NAVIGATION */
-    .navbar {
+    /* --- Top Bar --- */
+    .top-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 10px 20px;
       background: #f6e9e9;
-      padding: 20px 40px;
+      flex-wrap: wrap;
     }
 
-    .navbar img.logo {
-      max-width: 180px;
+    .logo {
+      max-width: 160px;
       height: auto;
     }
 
-    .navbar ul {
-      list-style: none;
+    .contact-info {
       display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 14px;
+      color: #7b6d6d;
     }
 
-    .navbar ul li a {
+    .contact-info a {
+      color: #7b6d6d;
       text-decoration: none;
-      color: #5c4a4a;
-      font-weight: 600;
     }
 
-    /* HERO SECTION */
+    .contact-info i {
+      margin-right: 6px;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: #fff;
+      padding: 12px 0;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #5c4a4a;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #d1b6ac;
+    }
+
+    /* --- Hero Image --- */
     .hero {
       position: relative;
       width: 100%;
-      height: 600px;
+      height: 350px;
       overflow: hidden;
     }
 
@@ -54,21 +81,20 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 20%; /* Adjust this to move image up/down */
+      object-position: center 70%;
     }
 
     .hero .cta-button {
       position: absolute;
-      bottom: 30px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
       background-color: #d1b6ac;
       border: none;
       color: white;
-      padding: 14px 30px;
+      padding: 14px 28px;
       font-size: 16px;
       border-radius: 8px;
-      cursor: pointer;
       text-decoration: none;
     }
 
@@ -99,7 +125,7 @@
       text-align: center;
     }
 
-    /* PHOTO SLIDER */
+    /* --- Photo Slider --- */
     .photo-slider {
       position: relative;
       width: 100%;
@@ -110,6 +136,7 @@
 
     .photo-track {
       display: flex;
+      width: 100%;
       transition: transform 0.5s ease;
     }
 
@@ -148,54 +175,52 @@
     }
 
     @media (max-width: 768px) {
-      .navbar {
+      .top-header {
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
+        gap: 10px;
       }
 
-      .navbar ul {
-        flex-direction: column;
+      nav {
+        flex-wrap: wrap;
         gap: 15px;
-        margin-top: 10px;
-      }
-
-      .logo {
-        max-width: 150px;
-      }
-
-      .hero {
-        height: 300px;
       }
     }
   </style>
 </head>
-<body>
 
-  <!-- Navigation -->
-  <div class="navbar">
-    <img src="assets/Logo.jpg" alt="Dermazen Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#treatments">Treatments</a></li>
-        <li><a href="#photographs">Before & After</a></li>
-        <li><a href="https://portal.aestheticnursesoftware.com/book-online/9773?fbclid=PAQ0xDSwKv0ENleHRuA2FlbQIxMQABp3URTtwk5BlIU212vd4cwGUTipBeMgLjoVrTymWvl7GYZ3mBj9XGHscX-H6M_aem_Ny9uKJVzIzZPw8-AjEw5TQ" target="_blank">Bookings</a></li>
-      </ul>
-    </nav>
+<body>
+  <!-- Header -->
+  <div class="top-header">
+    <img src="assets/Logo.jpg" alt="Dermazen Aesthetics Logo" class="logo">
+    <div class="contact-info">
+      <a href="https://wa.me/447838072845" target="_blank"><i class="fab fa-whatsapp"></i>07838 072845</a>
+      <a href="mailto:dermazenaesthetics@outlook.com"><i class="fas fa-envelope"></i>Email Us</a>
+      <a href="https://facebook.com/dermazenaesthetics" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com/dermazenaesthetics" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
+
+  <!-- Nav Menu -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#photographs">Before & After</a>
+    <a href="#contact">Bookings</a>
+  </nav>
 
   <!-- Hero Image -->
   <div class="hero">
-    <img src="assets/hero-banner.jpg" alt="Hero Image">
-    <a href="https://portal.aestheticnursesoftware.com/book-online/9773?fbclid=PAQ0xDSwKv0ENleHRuA2FlbQIxMQABp3URTtwk5BlIU212vd4cwGUTipBeMgLjoVrTymWvl7GYZ3mBj9XGHscX-H6M_aem_Ny9uKJVzIzZPw8-AjEw5TQ" target="_blank" class="cta-button">Book a Consultation</a>
+    <img src="assets/hero-image.jpg" alt="Hero Banner">
+    <a href="https://portal.aestheticnursesoftware.com/book-online/9773?fbclid=PAQ0xDSwKv0ENleHRuA2FlbQIxMQABp3URTtwk5BlIU212vd4cwGUTipBeMgLjoVrTymWvl7GYZ3mBj9XGHscX-H6M_aem_Ny9uKJVzIzZPw8-AjEw5TQ" class="cta-button" target="_blank">Book a Consultation</a>
   </div>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
     <p>With 20 years of nursing experience, I am a dedicated Registered Nurse specialising in aesthetics. 
-      My background provides a strong foundation in patient care and clinical excellence, while my passion for aesthetics brings artistry and precision to every treatment.
-      I’m committed to enhancing natural beauty with safe, effective, and tailored solutions for each patient. I prioritise patient education and comfort, ensuring a professional and compassionate approach to achieving aesthetic goals.</p>
+    My background provides a strong foundation in patient care and clinical excellence, while my passion for aesthetics brings artistry and precision to every treatment.
+    I’m committed to enhancing natural beauty with safe, effective, and tailored solutions for each patient. I prioritise patient education and comfort, ensuring a professional and compassionate approach to achieving aesthetic goals.</p>
   </section>
 
   <!-- Treatments -->
@@ -221,20 +246,18 @@
     </div>
   </section>
 
-  <!-- Before & After -->
+  <!-- Results Gallery -->
   <section id="photographs">
     <h2>Our Results</h2>
     <p>Browse through our gallery of transformations and treatments.</p>
     <div class="photo-slider">
       <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
       <div class="photo-track">
-        <img src="assets/FB_IMG_1.jpg" alt="Treatment Before">
-        <img src="assets/FB_IMG_2.jpg" alt="Treatment After">
-        <img src="assets/FB_IMG_3.jpg" alt="Skincare Results">
-        <img src="assets/FB_IMG_4.jpg" alt="Skincare Results">
-        <img src="assets/FB_IMG_5.jpg" alt="Skincare Results">
-        <img src="assets/FB_IMG_6.jpg" alt="Skincare Results">
-        <img src="assets/FB_IMG_7.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_1.jpg" alt="Before">
+        <img src="assets/FB_IMG_2.jpg" alt="After">
+        <img src="assets/FB_IMG_3.jpg" alt="Results">
+        <img src="assets/FB_IMG_4.jpg" alt="Results">
+        <img src="assets/FB_IMG_5.jpg" alt="Results">
       </div>
       <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
@@ -247,7 +270,6 @@
     <a href="mailto:dermazenaesthetics@outlook.com" class="cta-button">Email Us</a>
   </section>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 DermaZen. All rights reserved.
   </footer>
@@ -268,8 +290,7 @@
       updateSlider();
     }
 
-    updateSlider();  // Initialize on page load
+    updateSlider();
   </script>
-
 </body>
 </html>
