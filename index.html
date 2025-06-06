@@ -176,7 +176,7 @@
 <body>
   <header>
     <img src="assets/Logo.jpg" alt="Dermazen Aesthetics Logo" class="logo">
-    <p>Medical Aesthetic Clinic</p>
+    <p>Where science meets serenity in skincare</p>
     <a href="#contact" class="cta-button">Book a Consultation</a>
   </header>
 
@@ -203,4 +203,68 @@
     <div class="treatments">
       <div class="treatment">
         <h3>Anti-Wrinkle</h3>
-        <p>Smooth li
+        <p>Smooth lines and restore a youthful look with precision-targeted treatments.</p>
+      </div>
+      <div class="treatment">
+        <h3>Dermal Fillers</h3>
+        <p>Enhance and define natural features with expertly placed fillers.</p>
+      </div>
+      <div class="treatment">
+        <h3>Polynucleotides</h3>
+        <p>Stimulate skin regeneration and rejuvenation at a cellular level.</p>
+      </div>
+      <div class="treatment">
+        <h3>Skincare</h3>
+        <p>Tailored skincare routines and treatments for long-term skin health.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="photographs">
+    <h2>Our Results</h2>
+    <p>Browse through our gallery of transformations and treatments.</p>
+    <div class="photo-slider">
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <div class="photo-track">
+        <img src="assets/FB_IMG_1.jpg" alt="Treatment Before">
+        <img src="assets/FB_IMG_2.jpg" alt="Treatment After">
+        <img src="assets/FB_IMG_3.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_4.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_5.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_6.jpg" alt="Skincare Results">
+        <img src="assets/FB_IMG_7.jpg" alt="Skincare Results">
+      </div>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Email us at <a href="mailto:dermazenaesthetics@outlook.com">dermazenaesthetics@outlook.com</a> or follow us on Instagram @dermazenaesthetics</p>
+    <a href="mailto:dermazenaesthetics@outlook.com" class="cta-button">Email Us</a>
+  </section>
+
+  <footer>
+    &copy; 2025 DermaZen. All rights reserved.
+  </footer>
+
+  <script>
+    let index = 0;
+    const track = document.querySelector('.photo-track');
+    const slides = document.querySelectorAll('.photo-track img');
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function moveSlide(step) {
+      index += step;
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      updateSlider();
+    }
+
+    updateSlider();
+  </script>
+</body>
+</html>
