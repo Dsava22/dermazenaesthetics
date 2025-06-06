@@ -6,7 +6,6 @@
   <title>DermaZen | Aesthetics & Skincare</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
-
   <style>
     body {
       margin: 0;
@@ -15,31 +14,58 @@
       color: #333;
     }
 
-    header {
+    /* NAVIGATION */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: #f6e9e9;
-      padding: 60px 20px;
-      text-align: center;
+      padding: 20px 40px;
     }
 
-    .logo {
-      width: 100%;
-      max-width: 200px;
+    .navbar img.logo {
+      max-width: 180px;
       height: auto;
-      display: block;
-      margin: 0 auto 10px auto;
     }
 
-    header p {
-      font-size: 18px;
-      color: #7b6d6d;
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
     }
 
-    .cta-button {
-      margin-top: 20px;
+    .navbar ul li a {
+      text-decoration: none;
+      color: #5c4a4a;
+      font-weight: 600;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%; /* Adjust this to move image up/down */
+    }
+
+    .hero .cta-button {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
       background-color: #d1b6ac;
       border: none;
       color: white;
-      padding: 12px 24px;
+      padding: 14px 30px;
       font-size: 16px;
       border-radius: 8px;
       cursor: pointer;
@@ -73,45 +99,7 @@
       text-align: center;
     }
 
-    /* --- Hero image styles --- */
-    .hero-image {
-      position: relative;
-      width: 100%;
-      height: auto;
-      overflow: hidden;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: center 30%; /* Adjusts visible area */
-      display: block;
-      max-height: 500px;
-    }
-
-    .hero-button {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #d1b6ac;
-      color: white;
-      padding: 14px 28px;
-      border: none;
-      font-size: 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
-    }
-
-    .hero-button:hover {
-      background-color: #bfa196;
-    }
-
-    /* --- Photo slider styles --- */
+    /* PHOTO SLIDER */
     .photo-slider {
       position: relative;
       width: 100%;
@@ -122,7 +110,6 @@
 
     .photo-track {
       display: flex;
-      width: 100%;
       transition: transform 0.5s ease;
     }
 
@@ -152,18 +139,6 @@
     button.prev { left: 10px; }
     button.next { right: 10px; }
 
-    @media (max-width: 768px) {
-      .photo-slider {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .logo {
-        max-width: 150px;
-      }
-    }
-
     footer {
       background: #f6e9e9;
       text-align: center;
@@ -171,27 +146,51 @@
       font-size: 14px;
       color: #7b6d6d;
     }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .logo {
+        max-width: 150px;
+      }
+
+      .hero {
+        height: 300px;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <header>
-    <img src="assets/Logo.jpg" alt="Dermazen Aesthetics Logo" class="logo">
-    <p>Where science meets serenity in skincare</p>
-    <a href="#contact" class="cta-button">Book a Consultation</a>
-  </header>
 
-  <!-- Hero Banner Section -->
-  <div class="hero-image">
-    <img src="assets/hero-banner.jpg" alt="Aesthetic Beauty Banner">
-    <a href="https://portal.aestheticnursesoftware.com/book-online/9773?fbclid=PAQ0xDSwKv0ENleHRuA2FlbQIxMQABp3URTtwk5BlIU212vd4cwGUTipBeMgLjoVrTymWvl7GYZ3mBj9XGHscX-H6M_aem_Ny9uKJVzIzZPw8-AjEw5TQ" 
-       class="hero-button"
-       target="_blank" 
-       rel="noopener noreferrer">
-      Book a Consultation
-    </a>
+  <!-- Navigation -->
+  <div class="navbar">
+    <img src="assets/Logo.jpg" alt="Dermazen Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#treatments">Treatments</a></li>
+        <li><a href="#photographs">Before & After</a></li>
+        <li><a href="https://portal.aestheticnursesoftware.com/book-online/9773?fbclid=PAQ0xDSwKv0ENleHRuA2FlbQIxMQABp3URTtwk5BlIU212vd4cwGUTipBeMgLjoVrTymWvl7GYZ3mBj9XGHscX-H6M_aem_Ny9uKJVzIzZPw8-AjEw5TQ" target="_blank">Bookings</a></li>
+      </ul>
+    </nav>
   </div>
 
+  <!-- Hero Image -->
+  <div class="hero">
+    <img src="assets/HeroImage.jpg" alt="Hero Image">
+    <a href="https://portal.aestheticnursesoftware.com/book-online/9773?fbclid=PAQ0xDSwKv0ENleHRuA2FlbQIxMQABp3URTtwk5BlIU212vd4cwGUTipBeMgLjoVrTymWvl7GYZ3mBj9XGHscX-H6M_aem_Ny9uKJVzIzZPw8-AjEw5TQ" target="_blank" class="cta-button">Book a Consultation</a>
+  </div>
+
+  <!-- About -->
   <section id="about">
     <h2>About Us</h2>
     <p>With 20 years of nursing experience, I am a dedicated Registered Nurse specialising in aesthetics. 
@@ -199,6 +198,7 @@
       I’m committed to enhancing natural beauty with safe, effective, and tailored solutions for each patient. I prioritise patient education and comfort, ensuring a professional and compassionate approach to achieving aesthetic goals.</p>
   </section>
 
+  <!-- Treatments -->
   <section id="treatments">
     <h2>Our Treatments</h2>
     <div class="treatments">
@@ -221,6 +221,7 @@
     </div>
   </section>
 
+  <!-- Before & After -->
   <section id="photographs">
     <h2>Our Results</h2>
     <p>Browse through our gallery of transformations and treatments.</p>
@@ -239,12 +240,14 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <h2>Get in Touch</h2>
     <p>Email us at <a href="mailto:dermazenaesthetics@outlook.com">dermazenaesthetics@outlook.com</a> or follow us on Instagram @dermazenaesthetics</p>
     <a href="mailto:dermazenaesthetics@outlook.com" class="cta-button">Email Us</a>
   </section>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 DermaZen. All rights reserved.
   </footer>
@@ -265,7 +268,8 @@
       updateSlider();
     }
 
-    updateSlider();
+    updateSlider();  // Initialize on page load
   </script>
+
 </body>
 </html>
