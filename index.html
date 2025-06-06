@@ -15,43 +15,21 @@
       color: #333;
     }
 
-    /* --- NEW HEADER NAVIGATION --- */
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: #f6e9e9;
-    }
-
-    .top-bar .logo {
-      max-width: 160px;
-      height: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #5c4a4a;
-      font-weight: 600;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #d1b6ac;
-    }
-
-    header .cta-section {
+    header {
+      background: #f6e9e9;
+      padding: 60px 20px;
       text-align: center;
-      padding: 40px 20px;
     }
 
-    header .cta-section p {
+    .logo {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    header p {
       font-size: 18px;
       color: #7b6d6d;
     }
@@ -95,6 +73,44 @@
       text-align: center;
     }
 
+    /* --- Hero image styles --- */
+    .hero-image {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      max-height: 500px;
+    }
+
+    .hero-button {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #d1b6ac;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-button:hover {
+      background-color: #bfa196;
+    }
+
+    /* --- Photo slider styles --- */
     .photo-slider {
       position: relative;
       width: 100%;
@@ -136,20 +152,14 @@
     button.next { right: 10px; }
 
     @media (max-width: 768px) {
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-links {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        gap: 15px;
+      .photo-slider {
+        max-width: 100%;
       }
     }
 
     @media (max-width: 600px) {
-      .top-bar .logo {
-        max-width: 130px;
+      .logo {
+        max-width: 150px;
       }
     }
 
@@ -164,24 +174,22 @@
 </head>
 
 <body>
-  <!-- Top Bar with Logo and Navigation -->
-  <div class="top-bar">
-    <img src="assets/Logo.jpg" alt="Dermazen Logo" class="logo">
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#treatments">Treatments</a>
-      <a href="#photographs">Before & After</a>
-      <a href="#contact">Bookings</a>
-    </nav>
-  </div>
-
-  <!-- Centered Welcome Section -->
   <header>
-    <div class="cta-section">
-      <p>Where science meets serenity in skincare</p>
-      <a href="#contact" class="cta-button">Book a Consultation</a>
-    </div>
+    <img src="assets/Logo.jpg" alt="Dermazen Aesthetics Logo" class="logo">
+    <p>Medical Aesthetic Clinic</p>
+    <a href="#contact" class="cta-button">Book a Consultation</a>
   </header>
+
+  <!-- Hero Banner Section -->
+  <div class="hero-image">
+    <img src="assets/hero-banner.jpg" alt="Aesthetic Beauty Banner">
+    <a href="https://portal.aestheticnursesoftware.com/book-online/9773?fbclid=PAQ0xDSwKv0ENleHRuA2FlbQIxMQABp3URTtwk5BlIU212vd4cwGUTipBeMgLjoVrTymWvl7GYZ3mBj9XGHscX-H6M_aem_Ny9uKJVzIzZPw8-AjEw5TQ" 
+       class="hero-button"
+       target="_blank" 
+       rel="noopener noreferrer">
+      Book a Consultation
+    </a>
+  </div>
 
   <section id="about">
     <h2>About Us</h2>
@@ -195,68 +203,4 @@
     <div class="treatments">
       <div class="treatment">
         <h3>Anti-Wrinkle</h3>
-        <p>Smooth lines and restore a youthful look with precision-targeted treatments.</p>
-      </div>
-      <div class="treatment">
-        <h3>Dermal Fillers</h3>
-        <p>Enhance and define natural features with expertly placed fillers.</p>
-      </div>
-      <div class="treatment">
-        <h3>Polynucleotides</h3>
-        <p>Stimulate skin regeneration and rejuvenation at a cellular level.</p>
-      </div>
-      <div class="treatment">
-        <h3>Skincare</h3>
-        <p>Tailored skincare routines and treatments for long-term skin health.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="photographs">
-    <h2>Our Results</h2>
-    <p>Browse through our gallery of transformations and treatments.</p>
-    <div class="photo-slider">
-      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-      <div class="photo-track">
-        <img src="assets/FB_IMG_1.jpg" alt="Treatment Before">
-        <img src="assets/FB_IMG_2.jpg" alt="Treatment After">
-        <img src="assets/FB_IMG_3.jpg" alt="Skincare Results">
-        <img src="assets/FB_IMG_4.jpg" alt="Skincare Results">
-        <img src="assets/FB_IMG_5.jpg" alt="Skincare Results">
-        <img src="assets/FB_IMG_6.jpg" alt="Skincare Results">
-        <img src="assets/FB_IMG_7.jpg" alt="Skincare Results">
-      </div>
-      <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <p>Email us at <a href="mailto:dermazenaesthetics@outlook.com">dermazenaesthetics@outlook.com</a> or follow us on Instagram @dermazenaesthetics</p>
-    <a href="mailto:dermazenaesthetics@outlook.com" class="cta-button">Email Us</a>
-  </section>
-
-  <footer>
-    &copy; 2025 DermaZen. All rights reserved.
-  </footer>
-
-  <script>
-    let index = 0;
-    const track = document.querySelector('.photo-track');
-    const slides = document.querySelectorAll('.photo-track img');
-
-    function updateSlider() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function moveSlide(step) {
-      index += step;
-      if (index < 0) index = slides.length - 1;
-      if (index >= slides.length) index = 0;
-      updateSlider();
-    }
-
-    updateSlider();
-  </script>
-</body>
-</html>
+        <p>Smooth li
