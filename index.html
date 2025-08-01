@@ -24,14 +24,19 @@
       background-color: #f6e9e9;
     }
     
-    .name-title {
+    .logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.name-title {
   font-size: 14px;
   color: #5c4a4a;
   line-height: 1.4;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  max-width: 250px; /* controls how wide the whole block can be */
+  max-width: 250px;
 }
 
 .name-title strong {
@@ -44,7 +49,7 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 4px;
-  max-width: 100%; /* ensures logos wrap inside the name block */
+  max-width: 100%;
 }
 
 .membership-logos-inline img {
@@ -53,6 +58,7 @@
   object-fit: contain;
   flex-shrink: 1;
 }
+
     .contact-info {
       display: flex;
       gap: 20px;
@@ -214,20 +220,20 @@
     <div class="name-title">
       <strong>Marlene Savage</strong><br>
       <span>Medical Aesthetics Nurse, BSc RMN</span>
-    <div class="membership-logos-inline">
-      <img src="assets/HIS_Logo.png" alt="Institution 1" />
-      <img src="assets/NMC_Logo.png" alt="Institution 2" />
-      <img src="assets/BAMAN_Logo.png" alt="Institution 3" />
-    </div>
-    <div class="contact-info">
-      <div><i class="fab fa-whatsapp"></i> <a href="https://wa.me/447838072845" target="_blank">07838072845</a></div>
-      <div><i class="fa fa-envelope"></i> <a href="mailto:dermazenaesthetics@outlook.com">dermazenaesthetics@outlook.com</a></div>
-      <div><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/dermazenaesthetics" target="_blank">@dermazenaesthetics</a></div>
-      <div><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/61557468839404" target="_blank">facebook.com/dermazenaesthetics</a></div>
+      <div class="membership-logos-inline">
+        <img src="assets/HIS_Logo.png" alt="Institution 1" />
+        <img src="assets/NMC_Logo.png" alt="Institution 2" />
+        <img src="assets/BAMAN_Logo.png" alt="Institution 3" />
+      </div>
     </div>
   </div>
+  <div class="contact-info">
+    <div><i class="fab fa-whatsapp"></i> <a href="https://wa.me/447838072845" target="_blank">07838072845</a></div>
+    <div><i class="fa fa-envelope"></i> <a href="mailto:dermazenaesthetics@outlook.com">dermazenaesthetics@outlook.com</a></div>
+    <div><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/dermazenaesthetics" target="_blank">@dermazenaesthetics</a></div>
+    <div><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/61557468839404" target="_blank">facebook.com/dermazenaesthetics</a></div>
+  </div>
 </div>
-
 
   <nav class="nav-bar">
     <a href="#about">About</a>
