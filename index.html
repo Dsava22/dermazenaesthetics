@@ -248,8 +248,51 @@
 
       .contact-info {
         align-items: flex-start;
-      }
-    }
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 2 1 400px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+
+  .about-image img {
+    max-width: 220px;
+    margin-bottom: 15px;
+  }
+}
+        
   </style>
 </head>
 <body>
@@ -287,14 +330,27 @@
   </div>
   
   <header style="text-align: center; padding: 40px 20px;">
-  <h1>DermaZen – Aesthetics Clinic in Hamilton, South Lanarkshire</h1>
+  <h1>Aesthetics Clinic in Hamilton, South Lanarkshire</h1>
   <p>Specialising in anti-wrinkle injections, dermal fillers, polynucleotides, and advanced skin treatments.</p>
 </header>
   
   <section id="about">
-    <h2>About Us</h2>
-    <p>Based in Hamilton, South Lanarkshire, with 20 years of nursing experience, I am a dedicated Registered Nurse specialising in aesthetics. My background provides a strong foundation in patient care and clinical excellence, while my passion for aesthetics brings artistry and precision to every treatment. I’m committed to enhancing natural beauty with safe, effective, and tailored solutions for each patient. I prioritise patient education and comfort, ensuring a professional and compassionate approach to achieving aesthetic goals.</p>
-  </section>
+  <h2>About Us</h2>
+  <div class="about-container">
+    <div class="about-image">
+      <img src="assets/Profile.jpg" alt="Marlene Savage, DermaZen Aesthetics Nurse in Hamilton">
+    </div>
+    <div class="about-text">
+      <p>
+        Based in Hamilton, South Lanarkshire, with 20 years of nursing experience, I am a dedicated Registered Nurse specialising in aesthetics. 
+        My background provides a strong foundation in patient care and clinical excellence, while my passion for aesthetics brings artistry 
+        and precision to every treatment. I’m committed to enhancing natural beauty with safe, effective, and tailored solutions for each patient. 
+        I prioritise patient education and comfort, ensuring a professional and compassionate approach to achieving aesthetic goals.
+      </p>
+    </div>
+  </div>
+</section>
+
 
   <section id="treatments">
     <h2>Our Treatments</h2>
