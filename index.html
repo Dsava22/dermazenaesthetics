@@ -288,18 +288,19 @@
   }
 
 .about-image img {
-  width: 100%;
-  max-width: 120px;      /* keeps it nicely scaled on desktop */
-  height: auto;          /* preserves aspect ratio */
-  border-radius: 12px;   /* softer rectangle instead of circle */
+  display: block;
+  width: 180px;          /* fixed width on desktop */
+  height: auto;          /* keeps proportions correct */
+  max-width: 100%;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   object-fit: cover;
+  margin: 0 auto;        /* centres it if the container is wide */
 }
 
 @media (max-width: 768px) {
   .about-image img {
-    max-width: 160px;
-    border-radius: 10px;
+    width: 140px;       /* smaller on phones */
   }
 }
         
